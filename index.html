@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stationery Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Main Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">Stationery Store</h1>
+            <div class="nav-menu" id="navMenu">
+                <a href="#" class="nav-link active" onclick="showPage('home')">Home</a>
+                <a href="#" class="nav-link" onclick="showPage('products')">Products</a>
+                <a href="#" class="nav-link" onclick="showPage('about')">About</a>
+                <a href="#" class="nav-link" onclick="showPage('contact')">Contact</a>
+                <a href="#" class="nav-link" onclick="showPage('admin')">Admin</a>
+                <a href="#" class="nav-link cart-link" id="cartToggle">
+                    Cart <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="text-center p-20">
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-total">
+            <div class="total-row">
+                <span>Total:</span>
+                <span id="cartTotal">0 PKR</span>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Home Page -->
+    <section id="home" class="page active">
+        <div class="hero">
+            <div class="hero-content">
+                <h2>Your One-Stop Stationery Shop</h2>
+                <p>Quality stationery items for students and professionals</p>
+                <a href="#" class="hero-btn" onclick="showPage('products')">Shop Now</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="products-grid" id="featuredProducts">
+                <!-- Featured products loaded by JavaScript -->
+            </div>
+            <div class="info-box">
+                <p>We provide aesthetic, affordable, and high-quality stationery items curated for students.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Page -->
+    <section id="products" class="page hidden">
+        <div class="page-header">
+            <h1>Our Products</h1>
+            <p>Discover our wide range of stationery items</p>
+        </div>
+        <div class="container">
+            <div class="products-grid" id="allProducts">
+                <!-- All products loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Page -->
+    <section id="about" class="page hidden">
+        <div class="page-header">
+            <h1>About Us</h1>
+            <p>Learn more about our mission and values</p>
+        </div>
+        <div class="container">
+            <div class="about-content">
+                <div class="about-section">
+                    <h2>Our Story</h2>
+                    <p>This stationery store is developed as a semester project to provide students with useful stationery items. Our aim is to offer quality products in a simple and user-friendly way.</p>
+                    <p>This website is created using HTML, CSS, and JavaScript to demonstrate a fully functional e-commerce platform for stationery products.</p>
+                </div>
+                <div class="about-section">
+                    <h2>Our Mission</h2>
+                    <p>Welcome to Stationery Store! We provide high-quality stationery products for students, professionals, and artists. Our mission is to make learning and creating more enjoyable with our premium products.</p>
+                    <p>We believe that quality stationery can enhance productivity, creativity, and organization in both academic and professional settings.</p>
+                </div>
+                <div class="about-section">
+                    <h2>Our Values</h2>
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <i class="fas fa-star"></i>
+                            <h3>Quality</h3>
+                            <p>We source only the best materials for our products</p>
+                        </div>
+                        <div class="value-card">
+                            <i class="fas fa-hand-holding-usd"></i>
+                            <h3>Affordability</h3>
+                            <p>Premium products at student-friendly prices</p>
+                        </div>
+                        <div class="value-card">
+                            <i class="fas fa-shipping-fast"></i>
+                            <h3>Reliability</h3>
+                            <p>Timely delivery and consistent service</p>
+                        </div>
+                        <div class="value-card">
+                            <i class="fas fa-users"></i>
+                            <h3>Community</h3>
+                            <p>Supporting students and educators</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" class="page hidden">
+        <div class="page-header">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our team</p>
+        </div>
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>Air University, Chak-5 Faiz, Multan, Pakistan</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+92 300 1234567</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@stationerystore.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                            <p>Saturday: 10:00 AM - 4:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Panel -->
+    <section id="admin" class="page hidden">
+        <div class="admin-container">
+            <!-- Login Section -->
+            <div id="loginSection" class="admin-section active">
+                <div class="login-box">
+                    <h2><i class="fas fa-lock"></i> Admin Login</h2>
+                    <p>This is the admin area. Only authorized users can access this page.</p>
+                    <div class="login-form">
+                        <input type="password" id="adminPassword" placeholder="Enter admin password">
+                        <button class="login-btn" onclick="loginAdmin()">Login</button>
+                    </div>
+                    <p class="hint">Hint: Try "admin123" for demo</p>
+                </div>
+            </div>
+
+            <!-- Admin Dashboard -->
+            <div id="adminDashboard" class="admin-section hidden">
+                <div class="admin-card">
+                    <h3>Admin Panel</h3>
+
+                    <!-- Add Product Form -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Product Name</label>
+                            <input type="text" id="addName" placeholder="Enter product name">
+                        </div>
+                        <div class="form-group">
+                            <label>Price (PKR)</label>
+                            <input type="number" id="addPrice" placeholder="Enter price">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="addDesc" placeholder="Enter product description"></textarea>
+                    </div>
+                    <button class="admin-btn primary" onclick="addProduct()">
+                        <i class="fas fa-plus"></i> Add Product
+                    </button>
+
+                    <!-- Update Product Form (Hidden by default) -->
+                    <div id="updateCard" class="hidden">
+                        <h4>Update Product</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Product Name</label>
+                                <input type="text" id="updateName">
+                            </div>
+                            <div class="form-group">
+                                <label>Price (PKR)</label>
+                                <input type="number" id="updatePrice">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea id="updateDesc"></textarea>
+                        </div>
+                        <button class="admin-btn primary" onclick="updateProduct()">
+                            <i class="fas fa-save"></i> Update Product
+                        </button>
+                        <button class="admin-btn secondary" onclick="cancelUpdate()">
+                            <i class="fas fa-times"></i> Cancel
+                        </button>
+                    </div>
+
+                    <!-- Products List -->
+                    <div class="mt-20">
+                        <h4>Product List</h4>
+                        <div class="table-container">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Description</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="productList">
+                                    <!-- Products loaded by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Stationery Store</h3>
+                <p>Providing quality stationery since 2025</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#" onclick="showPage('home')">Home</a>
+                <a href="#" onclick="showPage('products')">Products</a>
+                <a href="#" onclick="showPage('about')">About</a>
+                <a href="#" onclick="showPage('contact')">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Air University, Chak-5 Faiz, Multan, Pakistan</p>
+                <p><i class="fas fa-phone"></i> +92 300 1234567</p>
+                <p><i class="fas fa-envelope"></i> info@stationerystore.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Stationery Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
